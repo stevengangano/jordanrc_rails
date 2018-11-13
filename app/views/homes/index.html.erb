@@ -24,7 +24,7 @@
 		      <a href="#news"><li>NEWS</li></a>
 		      <a href="#music"><li>MUSIC</li></a>
 		      <a href="#videos"><li>VIDEOS</li></a>
-		      <a href="/about"><li></li></a>
+		      <a><li><%= link_to "BIO", bios_index_path, style:'color:white; text-decoration:none', class:'bio-hover' %></li></a>
 		      <a href="#contact"><li>CONTACT</li></a>
           <% if current_user %>
           <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
