@@ -1,1 +1,378 @@
-<h1> Hello world </h1>
+<header class="head text-right">
+	<ul>
+		<a href="https://soundcloud.com/jordanrcmusic" target="_blank"><li><i class="fa fa-soundcloud" aria-hidden="true"></i></li></a>
+		<a href="https://open.spotify.com/artist/32ZD69vCbq2sctfs9JBVN8" target="_blank"><li><i class="fa fa-spotify"></i></li></a>
+		<a href="https://www.youtube.com/channel/UCH8IzGUE0SEDm-Ya9-Zn--A" target="_blank"><li><i class="fa fa-youtube"></i></li></a>
+		<a href="https://www.instagram.com/jordan.r_c/" target="_blank"><li><i class="fa fa-instagram"></i></li></a>
+	</ul>
+</header>
+
+<nav>
+    <div class="nav-main">
+	    <div class="menu-handle poop">
+	      <span class="menu-text"><a id="cpBtn">
+	        <div class="end"></div>
+	        <div class="mid"></div>
+	        <div class="end"></div>
+	      </a></span>
+	      <div class="logo-handle"><span class="logo-text" style="color:#972525;"> Jordan RC </span> </div>
+	    </div>
+	    <ul class="nav-list">
+	      <span><i class="fa fa-close nav-close"></i></span>
+	      <li class="logo" style="color:#972525;">Jordan RC</li>
+	      <div class="move-right">
+		      <a href="#news"><li>NEWS</li></a>
+		      <a href="#music"><li>MUSIC</li></a>
+		      <a href="#videos"><li>VIDEOS</li></a>
+		      <a href="/about"><li>BIO</li></a>
+		      <a href="#contact"><li>CONTACT</li></a>
+
+
+
+
+
+
+
+
+
+	      </div>
+	    </ul>
+    </div>
+</nav>
+
+<!-- Slideshow -->
+<ul class="rslides">
+  <li><%= image_tag 'jordanrc1.jpg', alt:'' %></li>
+  <li><%= image_tag 'jordanrc2.jpg', alt:'' %></li>
+  <li><%= image_tag 'jordanrc3.jpg', alt:'' %></li>
+  <li><%= image_tag 'jordanrc4.jpg', alt:'' %></li>
+</ul>
+
+<div class="news-bar" id="news">
+	<h3 class="text-center"><span class="news-text"> NEWS </span></h3>
+</div>
+
+<section class="shows">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-xs-12 col-sm-12 col-md-12
+	     col-lg-12 text-left">
+   			<% @homes.each_with_index do |event, index| %>
+	      	<div class="style<%= index  + 1 %> news-square">
+	      		<span class="news-month"> <%= event.month %>  </span>
+	      		<span class="news-day"> <%= event.day.floor %>  </span>
+	      		<span class="news-city"> <%= event.city.capitalize %> </span>
+	      		<span class="news-details" style="font-weight: bold;letter-spacing:1px;color:black;"> (click for details) </span>  
+
+          <%= link_to '', edit_home_path(event), class: "glyphicon glyphicon-pencil", style:"margin:0 7px; color: yellow;" %>
+          <!-- Path must be show path aka home_path(event) -->
+          <%= link_to '', home_path(event), method: :delete, data: {confirm: "Are you sure?"}, style:'color:red', class: "glyphicon glyphicon-trash" %> 
+
+        </div>
+	   		<div class="dropdown-container<%=index + 1 %>" style="background-color: black; display: none;">
+	   			<p class="news-info"> <%= event.news_info.capitalize %>  </span> </p>
+	   		</div>
+
+	   		<% end %>
+	  </div>  
+	</div>
+</section>
+
+<!-- *********************************MUSIC****************************** -->
+
+<div class="music-bar" id="music">
+	<h3 class="text-center"><span class="music-text"> MUSIC </span></h3>
+</div>
+
+<div class="row" style="position:relative; bottom: 5px;">
+
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color: #EC4400; margin: 0px; padding:0px;">
+	<div class="soundcloud text-center"> 
+		<i class="fa fa-soundcloud player" st aria-hidden="true"></i>
+ 	</div>
+			<iframe width="100%" height="445" scrolling="yes" frameborder="yes" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/24715634&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe>
+	</div>
+
+<!-- 	<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="background-color: #1ED760; margin: 0px; padding: 0px;">
+		<div class="spotify text-center"> 
+			<i class="fa fa-spotify player" aria-hidden="true"></i>
+ 		</div>
+			<iframe class="spotify-player" src="https://embed.spotify.com/?uri=spotify%3Aartist%3A32ZD69vCbq2sctfs9JBVN8" width="100%" height="445" frameborder="0" allowtransparency="true" ></iframe>
+	</div> -->
+</div>
+
+<!-- *********************************VIDEOS****************************** -->
+
+<div class="videos-bar" id="videos">
+	<h3 class="text-center"><span class="videos-text"> VIDEOS </span></h3>
+</div>
+
+  	<!-- Carousel -->
+<div class="videos-carousel">
+  <div class="row slider">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="myCarousel" class="carousel slide text-center" data-ride="carousel" data-interval="false">
+        <!-- Indicators -->
+        <ol id="bootstrap-overrides2" class="carousel-indicators text-center">
+          <li data-target="#myCarousel" data-slide-to="0" class="active text-center"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+          <li data-target="#myCarousel" data-slide-to="3"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+
+          <div class="carousel-vids item home active">
+          	<iframe width="100%" height="500" src="https://www.youtube.com/embed/BbuCDmEVUrM" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <div class="carousel-vids item home">
+			<iframe width="100%" height="500" src="https://www.youtube.com/embed/8m6zP2ePCDM" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <div class="carousel-vids item home">
+			<iframe width="100%" height="500" src="https://www.youtube.com/embed/t0kks_r1gfw" frameborder="0" allowfullscreen></iframe>
+          </div>
+
+          <div class="carousel-vids item home">
+			<iframe width="100%" height="500" src="https://www.youtube.com/embed/pkmojVTD4r8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </div>
+
+        </div> <!-- end carousel-inner -->
+
+        <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel"  role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+      		</div> <!-- end myCarousel -->
+    	</div> <!-- end col -->
+	</div>
+</div>
+<!-- *********************************SHOWS****************************** -->
+
+<!-- <div class="shows-bar">
+	<h3 class="text-center"><span class="shows-text"> SHOWS </span></h3>
+</div>
+
+<section class="shows">
+	<div class="container">
+	  <div class="row">
+	    <div class="col-xs-12 col-sm-12 col-md-12
+	     col-lg-12 text-left">
+	      	<div class="blue-square-shows">
+	      		<span class="shows-month">TBD</span>
+	      		<span class="shows-day"></span>
+	      		<span class="shows-city"></span> 
+	    		<span class="shows-venue">  </span>
+	      	</div>
+
+	      	<div class="pink-square-shows">
+	      		<span class="shows-month">APR</span>
+	      		<span class="shows-day">5</span>
+	      		<span class="shows-city">San Francisco,CA</span> 
+	    		<span class="shows-venue"> TBD </span>	      			
+	      	</div>
+	      	<div class="purple-square-shows">
+	      		<span class="shows-month">APR</span>
+	      		<span class="shows-day">30</span>
+	      		<span class="shows-city">San Francisco,CA</span> 
+	    		<span class="shows-venue"> TBD </span>
+	      	</div>
+	      	<div class="maroon-square-shows">
+	      		<span class="shows-month">MAY</span>
+	      		<span class="shows-day">2</span>
+	      		<span class="shows-city">San Francisco,CA</span> 
+	    		<span class="shows-venue"> TBD </span>
+	      	</div>
+	      	<div class="green-square-shows">
+	      		<span class="shows-month">JUN</span>
+	      		<span class="shows-day">12</span>
+	      		<span class="shows-city"> San Francisco, CA </span> 
+	    		<span class="shows-venue"> TBD </span>
+	      	</div>
+	      	<div class="blue-square-shows">
+	      		<span class="shows-month">AUG</span>
+	      		<span class="shows-day">7</span>
+	      		<span class="shows-city">San Francisco,CA</span> 
+	    		<span class="shows-venue"> TBD </span>
+	      	</div>
+	      </a>
+      	<div class="pink-square-shows">
+      		<span class="shows-month">OCT</span>
+      		<span class="shows-day" >10</span>
+      		<span class="shows-city">San Francisco,CA</span> 
+    		<span class="shows-venue"> TBD </span>
+      	</div>
+	    <div class="green-square-shows">
+      		<span class="shows-month">NOV</span>
+      		<span class="shows-day">16</span>
+      		<span class="shows-city">San Francisco,CA</span> 
+    		<span class="shows-venue"> TBD </span>
+	     </div>
+	    </div>
+	  </div>  
+	</div>
+</section> -->
+
+<!-- *********************************Contact****************************** -->
+
+<div class="contact-bar" id="contact">
+	<h3 class="text-center"><span class="contact-text"> Contact </span></h3>
+</div>
+
+<section class="contact">
+  <div class="row" style="background-color:black;">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<h5 class="contact-jordan" class="col-sm-pull-2"> CONTACT JORDAN </h5>
+    	<!-- <hr style="border: 1px solid gray;"> -->
+
+<!-- <iframe class="contact-form" height='350' allowTransparency='true' frameborder='0' scrolling='no' style='width:100%;border:none'  src='//www.formget.com/app/embed/form/KRPb-281391/i?w=800'>Your Contact </iframe> -->
+
+<!-- <iframe height='350' allowTransparency='true' frameborder='0' scrolling='no' style='width:100%;border:none'  src='//www.formget.com/app/embed/form/klV7-281503/i?w=800'>Your Contact </iframe> -->
+
+
+    <iframe
+      id="JotFormIFrame-82606118334150"
+      onload="window.parent.scrollTo(0,0)"
+      allowtransparency="true"
+      allowfullscreen="true"
+      allow="geolocation; microphone; camera"
+      src="https://form.jotform.com/82606118334150"
+      frameborder="0"
+      style="width: 1px;
+   	  min-width: 100%;
+      height:539px;
+      border:none;"
+      scrolling="no"
+    >
+    </iframe>
+    <script type="text/javascript">
+      var ifr = document.getElementById("JotFormIFrame-82606118334150");
+      if(window.location.href && window.location.href.indexOf("?") > -1) {
+        var get = window.location.href.substr(window.location.href.indexOf("?") + 1);
+        if(ifr && get.length > 0) {
+          var src = ifr.src;
+          src = src.indexOf("?") > -1 ? src + "&" + get : src  + "?" + get;
+          ifr.src = src;
+        }
+      }
+      window.handleIFrameMessage = function(e) {
+        var args = e.data.split(":");
+        if (args.length > 2) { iframe = document.getElementById("JotFormIFrame-" + args[(args.length - 1)]); } else { iframe = document.getElementById("JotFormIFrame"); }
+        if (!iframe) { return; }
+        switch (args[0]) {
+          case "scrollIntoView":
+            iframe.scrollIntoView();
+            break;
+          case "setHeight":
+            iframe.style.height = args[1] + "px";
+            break;
+          case "collapseErrorPage":
+            if (iframe.clientHeight > window.innerHeight) {
+              iframe.style.height = window.innerHeight + "px";
+            }
+            break;
+          case "reloadPage":
+            window.location.reload();
+            break;
+          case "loadScript":
+            var src = args[1];
+            if (args.length > 3) {
+                src = args[1] + ':' + args[2];
+            }
+            var script = document.createElement('script');
+            script.src = src;
+            script.type = 'text/javascript';
+            document.body.appendChild(script);
+            break;
+          case "exitFullscreen":
+            if      (window.document.exitFullscreen)        window.document.exitFullscreen();
+            else if (window.document.mozCancelFullScreen)   window.document.mozCancelFullScreen();
+            else if (window.document.mozCancelFullscreen)   window.document.mozCancelFullScreen();
+            else if (window.document.webkitExitFullscreen)  window.document.webkitExitFullscreen();
+            else if (window.document.msExitFullscreen)      window.document.msExitFullscreen();
+            break;
+        }
+        var isJotForm = (e.origin.indexOf("jotform") > -1) ? true : false;
+        if(isJotForm && "contentWindow" in iframe && "postMessage" in iframe.contentWindow) {
+          var urls = {"docurl":encodeURIComponent(document.URL),"referrer":encodeURIComponent(document.referrer)};
+          iframe.contentWindow.postMessage(JSON.stringify({"type":"urls","value":urls}), "*");
+        }
+      };
+      if (window.addEventListener) {
+        window.addEventListener("message", handleIFrameMessage, false);
+      } else if (window.attachEvent) {
+        window.attachEvent("onmessage", handleIFrameMessage);
+      }
+      </script>
+
+<!-- 		<form class="text-center" id="my_form" onsubmit="submitForm(); return false;">
+		  <label class="contact-fields" for="name"> NAME <span style="color:red"> * </span> </label><br>
+		  <p><input cols="40" id="n" placeholder="Name" style="width: 50%; margin-left:3%;" required></p>
+
+		  <label class="contact-fields" for="email"> EMAIL <span style="color:red"> * </span> </label><br>
+		  <p><input cols="40" id="e" placeholder="Email Address" type="email" style="width: 50%; margin-left:3%;" required></p><br>
+
+		  <label  class="contact-fields" for="comment"> MESSAGE <span style="color: red;"> * </span> </label><br><textarea  rows="5" cols="40" id="m" placeholder="write your message here" rows="10" style="margin-left:3%;" required></textarea>
+
+		  <div><input id="mybtn" class="btn btn-danger btn-sm" type="submit" value="Submit Form"> <span id="status"></span></div>
+
+		</form> -->
+	</div>
+
+	<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+		<%= image_tag 'contact_image.jpg', class:'contact-image img-responsive' %>
+	</div>
+ </div>
+</section>
+
+ <footer>
+	 <ul class="social-icons">
+	 	<a href="https://soundcloud.com/jordanrcmusic" target="_blank"><li><i class="fa fa-soundcloud footer" aria-hidden="true"></i></li></a>
+		<a href="https://open.spotify.com/artist/32ZD69vCbq2sctfs9JBVN8" target="_blank"><li><i class="fa fa-spotify footer"></i></li></a>
+		<a href="https://www.youtube.com/channel/UCH8IzGUE0SEDm-Ya9-Zn--A" target="_blank"><li><i class="fa fa-youtube footer"></i></li></a>
+		<a href="https://www.instagram.com/jordan.r_c/" target="_blank"><li><i class="fa fa-instagram footer"></i></li></a>
+	</ul>
+ </footer>
+
+<script>
+  $(".style1").click(function(){
+    $(".dropdown-container1").slideToggle();
+  });
+  $(".style2").click(function(){
+    $(".dropdown-container2").slideToggle();
+  });
+  $(".style3").click(function(){
+    $(".dropdown-container3").slideToggle();
+  });
+  $(".style4").click(function(){
+    $(".dropdown-container4").slideToggle();
+  });
+  $(".style5").click(function(){
+    $(".dropdown-container5").slideToggle();
+  });
+  $(".style6").click(function(){
+    $(".dropdown-container6").slideToggle();
+  });
+  $(".style7").click(function(){
+    $(".dropdown-container7").slideToggle();
+  });
+  $(".style8").click(function(){
+    $(".dropdown-container8").slideToggle();
+  });
+  $(".style9").click(function(){
+    $(".dropdown-container9").slideToggle();
+  });
+  $(".style10").click(function(){
+    $(".dropdown-container10").slideToggle();
+  });
+  
+</script>
+
