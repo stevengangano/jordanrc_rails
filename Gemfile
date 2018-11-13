@@ -7,6 +7,7 @@ end
 
 
 ruby '2.4.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 gem 'devise', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sprockets', '~> 3.5', '>= 3.5.2'

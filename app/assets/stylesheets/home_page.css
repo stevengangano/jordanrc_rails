@@ -210,10 +210,13 @@ nav ul li {
 nav ul li:hover {
   color: #FE4C6E; }
 
-a {
+a,
+.bio-hover {
   text-decoration: none;
   color: inherit;
   /*when hovered it takes color around it*/ }
+
+
 
 /*Social Media Header */
 .head {

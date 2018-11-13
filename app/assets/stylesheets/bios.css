@@ -1,0 +1,54 @@
+/*Removes whitespace between navbar and image below*/
+.nav-main {
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden; /*Hides scroll bars for navbar*/
+}
+
+img.bg {
+  /* Set rules to fill background */
+  min-height: 200%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.fa.fa-spotify.footer,
+.fa.fa-youtube.footer,
+.fa.fa-instagram.footer,
+.fa.fa-twitter.footer {
+	font-size: 225%;
+}
+
+@media (min-width:775px) {
+	img.bg {
+		position: relative;
+		bottom: 10%;
+	}
+}
+
+.about-me {
+	padding: -20px 30px 25px 30px;
+	border-top: 2px solid #972526;
+	border-bottom: 2px solid #972526;
+	background-color: #1F1F22;
+	color: white;
+}
+
+@media (min-width: 776px) {
+	.home-button {
+		display: none;
+	}
+}
+
+
+
+
+
