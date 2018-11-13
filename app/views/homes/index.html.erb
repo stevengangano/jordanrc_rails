@@ -26,15 +26,11 @@
 		      <a href="#videos"><li>VIDEOS</li></a>
 		      <a href="/about"><li>BIO</li></a>
 		      <a href="#contact"><li>CONTACT</li></a>
-
-
-
-
-
-
-
-
-
+          <% if current_user %>
+          <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+          <li><%= link_to "LOGIN", new_user_session_path %></li>
+          <% end %>
 	      </div>
 	    </ul>
     </div>
@@ -62,12 +58,12 @@
 	      		<span class="news-month"> <%= event.month %>  </span>
 	      		<span class="news-day"> <%= event.day.floor %>  </span>
 	      		<span class="news-city"> <%= event.city.capitalize %> </span>
-	      		<span class="news-details" style="font-weight: bold;letter-spacing:1px;color:black;"> (click for details) </span>  
-
+	      		<span class="news-details" style="font-weight: bold;letter-spacing:1px;color:black;"> (click for details) </span>              
+          <% if current_user %>
           <%= link_to '', edit_home_path(event), class: "glyphicon glyphicon-pencil", style:"margin:0 7px; color: yellow;" %>
           <!-- Path must be show path aka home_path(event) -->
           <%= link_to '', home_path(event), method: :delete, data: {confirm: "Are you sure?"}, style:'color:red', class: "glyphicon glyphicon-trash" %> 
-
+          <% end %>
         </div>
 	   		<div class="dropdown-container<%=index + 1 %>" style="background-color: black; display: none;">
 	   			<p class="news-info"> <%= event.news_info.capitalize %>  </span> </p>

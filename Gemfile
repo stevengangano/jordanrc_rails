@@ -7,6 +7,7 @@ end
 
 
 ruby '2.4.1'
+gem 'devise', '~> 4.2'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'sprockets', '~> 3.5', '>= 3.5.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
