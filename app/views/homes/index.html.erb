@@ -27,9 +27,9 @@
 		      <a><li><%= link_to "BIO", bios_index_path, style:'color:white; text-decoration:none', class:'' %></li></a>
 		      <a href="#contact"><li>CONTACT</li></a>
           <% if current_user %>
-          <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class:'nav-link' %></li>
           <% else %>
-          <li><%= link_to "LOGIN", new_user_session_path %></li>
+          <li><%= link_to "LOGIN", new_user_session_path, class:'nav-link' %></li>
           <% end %>
 	      </div>
 	    </ul>
