@@ -21,7 +21,7 @@
 $(document).ready(function () {
   
   // Toggles Hamburger Icon
-    $('.menu-handle').on('click', function(){
+    $('body').on('click', '.menu-handle', function(){
       $('nav ul').toggleClass('showing');
 
   });
