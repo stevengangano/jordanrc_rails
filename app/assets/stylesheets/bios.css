@@ -48,6 +48,13 @@ img.bg {
 	}
 }
 
+@media (min-width: 915px) {
+	.home-bio {
+		display: none;
+	}
+}
+
+
 
 
 

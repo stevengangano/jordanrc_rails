@@ -15,22 +15,26 @@
 	        <div class="mid"></div>
 	        <div class="end"></div>
 	      </a></span>
-	      <div class="logo-handle"><span class="logo-text" style="color:#972525;"> Jordan RC </span> </div>
+	      <a href="/" class="nav-btn"><div class="logo-handle"><span class="logo-text" style="color:#972525;text-decoration:none;"> Jordan RC </span> </div></a>
 	    </div>
 	    <ul class="nav-list">
 	      <span><i class="fa fa-close nav-close"></i></span>
-	      <li class="logo" style="color:#972525;">Jordan RC</li>
+	      <a href="/"><li class="logo" style="color:#972525;text-decoration:none;">Jordan RC</li></a>
 	      <div class="move-right">
-		      <a href="#news"><li>NEWS</li></a>
-		      <a href="#music"><li>MUSIC</li></a>
-		      <a href="#videos"><li>VIDEOS</li></a>
-		      <a><li><%= link_to "BIO", bio_path, style:'color:white; text-decoration:none', class:'' %></li></a>
-		      <a href="#contact"><li>CONTACT</li></a>
+	      <% if [bio_path, new_user_session_path, new_home_path].map{|p| current_page?(p)}.any? %>
+    	      <a class="nav-btn home-bio"><li><%= link_to "HOME", root_path, style:"color:white;text-decoration:none;", class:"home-bio" %></li><a>
+    	  <% else %>   
+		      <a id="#news" class="nav-btn" href="#news"><li>NEWS</li></a>
+		      <a id="#music" class="nav-btn" href="#music"><li>MUSIC</li></a>
+		      <a id="#videos" class="nav-btn" href="#videos"><li>VIDEOS</li></a>
+		      <a><li><%= link_to "BIO", bio_path, style:'color:white; text-decoration:none', class:'nav-btn-2' %></li></a>
+		      <a id="#contact" class="nav-btn" href="#contact"><li>CONTACT</li></a>
           <% if current_user %>
           <li><%= link_to "EDIT", edit_user_registration_path %></li>
           <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, class:'nav-link' %></li>
           <% else %>
-          <li><%= link_to "LOGIN", new_user_session_path, class:'nav-link' %></li>
+          <li><%= link_to "LOGIN", new_user_session_path, class:'nav-btn-2' %></li>
+          <% end %>
           <% end %>
 	      </div>
 	    </ul>

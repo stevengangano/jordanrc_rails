@@ -21,8 +21,9 @@
 $(document).ready(function () {
   
   // Toggles Hamburger Icon
-    $('body').on('click', '.menu-handle', function(){
-      $('nav ul').toggleClass('showing');
+  // Allows Button to work on page refresh
+    $(document).on('click', '.nav-main', function(){
+      $('nav ul').toggleClass('showing')
 
   });
 
@@ -31,6 +32,31 @@ $(document).ready(function () {
       $('nav ul').toggleClass('showing');
 
   });
+
+
+//Scrolling to subsection within page
+  $(".nav-btn").click(function(e){
+    
+    //prevents page from refreshing
+    e.preventDefault();
+    
+    var sectionID = e.currentTarget.id
+
+    $('html, body').animate({
+        scrollTop: $(sectionID).offset().top
+      }, 'slow')
+ 
+  })
+
+//Scrolling to subsection within page
+  $(".nav-btn-2").click(function(e){
+    
+    //prevents page from refreshing
+    
+    
+  })
+
+
 
 //touch screen carousel
 $(".carousel").on("touchstart", function(event){

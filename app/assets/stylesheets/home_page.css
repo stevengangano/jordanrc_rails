@@ -712,12 +712,10 @@ footer {
 /*# sourceMappingURL=application.css.map */
 
 /*Navbar*/
-@media (max-width: 775px) {
-
+@media (max-width: 915px) {
     .logo{
       display: none;
     }
-
     .fa-close.nav-close{
       display: block;
       position: absolute;
@@ -735,7 +733,7 @@ footer {
     float: left;
     position: relative;
     background: black;
-    height: 41%;
+    height: 48%;
     width: 25%;
     position: fixed;
     display: none;
@@ -1078,5 +1076,12 @@ footer {
 @media (max-width: 415px) {
   .contact-jordan {
     display: none;
+  }
+}
+
+@media (max-width: 775px) {
+  .glyphicon-pencil,
+  .glyphicon-trash {
+    font-size: 15px;
   }
 }
